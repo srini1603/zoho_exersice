@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2</title>
+    <style>
+        body {
+    font-family: Arial;
+    margin: 30px;
+  }
+  
+  /* Header/Logo Title */
+  .header {
+    padding: 10px;
+    text-align: center;
+    background: #8F7FF0;
+    color: rgb(19, 18, 18);
+    font-size: 20px;
+  }
+  
+  /* Page Content */
+  .content {padding:20px;}
+  
+  table {
+     margin: 50px;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+
+    }
+    .btns{
+        float: right;
+        height: 40px;
+        justify-content:center ;
+        margin-bottom: 10px;
+        margin-right: 50%;
+    }
+    #add{
+        border-style: none;
+        border-radius: 16px;
+        font-size: 20px;
+        height: 40px;
+        width: 60px;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 10px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    td>input{
+        padding-block-start: 20px;
+        width: 50%;
+    }
+    #myTableData{
+        width: 50%;
+        font-size: 20px;
+
+    }
+    </style>
+    
+</head>
+<body onload="load()">
+    <div class="header">
+        <h1>Library Management</h1>
+      </div>
+<div id="myform">
+<h2>Add Books </h2>
+<table>
+    <tr>
+        <td>Book Name</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Aurthor</td>
+        <td><input type="text" id="aurth"></td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td><input type="text" id="cate"></td>
+    </tr>
+</table>
+<div class="btns">
+    <input type="button" id="add" value="Add" onclick="Javascript:addRow()">
+</div>
+<br>
+<br>
+</div>
+<br>
+<div id="mydata">
+<h2>Current Books in the System</h2>
+<table id="myTableData"  border="1" cellpadding="2">
+    <tr>
+        <td>&nbsp;</td>
+        <td><b>Book Name</b></td>
+        <td><b>Aurthor</b></td>
+        <td><b>Category</b></td>
+    </tr>
+</table>
+&nbsp;
+ 
+</div>
+ 
+</body>
+<script>
+    function addRow() {
+          
+          var name = document.getElementById("name");
+          var aurth = document.getElementById("aurth");
+          var cate = document.getElementById("cate");
+          var table = document.getElementById("myTableData");
+       
+          var rowCount = table.rows.length;
+          var row = table.insertRow(rowCount);
+       
+          row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+          row.insertCell(1).innerHTML= name.value;
+          row.insertCell(2).innerHTML= aurth.value;
+          row.insertCell(3).innerHTML= cate.value;
+       
+      }
+       
+      function deleteRow(obj) {
+            
+          var index = obj.parentNode.parentNode.rowIndex;
+          var table = document.getElementById("myTableData");
+          table.deleteRow(index);
+          
+      }
+      
+</script>
+</html>
