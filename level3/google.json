@@ -1,0 +1,12 @@
+{
+    "@context": "https://freecodecamp.org/",
+    "@type": "python",
+    "name": "Learn python",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Stone"
+    },
+    "datePublished": "2018-03-10",
+    "description": "learn python in 10hours",
+    "prepTime": "PT20M"
+  }
